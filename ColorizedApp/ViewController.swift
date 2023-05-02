@@ -20,16 +20,27 @@ class ViewController: UIViewController {
     @IBOutlet var greenSlider: UISlider!
     @IBOutlet var blueSlider: UISlider!
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         colorView.layer.cornerRadius = 12
         setupSlider()
-        setsColorView()
+        setValueLabel()
     }
-
+    
+    @IBAction func redSliderAction() {
+        setsColorView()
+        redLabel.text = stringFromSladerValue(redSlider)
+    }
+    @IBAction func greenSliderAction() {
+        setsColorView()
+        greenLabel.text = stringFromSladerValue(greenSlider)
+    }
+    @IBAction func blueSliderActionn() {
+        setsColorView()
+        blueLabel.text = stringFromSladerValue(blueSlider)
+    }
+    
+    
     
     
     private func setsColorView() {
@@ -38,7 +49,7 @@ class ViewController: UIViewController {
             green: CGFloat(greenSlider.value),
             blue: CGFloat(blueSlider.value),
             alpha: 1
-        )
+            )
     }
     
     
@@ -46,11 +57,23 @@ class ViewController: UIViewController {
     private func setupSlider() {
         redSlider.minimumTrackTintColor = .red
         redSlider.thumbTintColor = .red
+        redSlider.maximumTrackTintColor = .gray
         greenSlider.minimumTrackTintColor = .green
         greenSlider.thumbTintColor = .green
+        greenSlider.maximumTrackTintColor = .gray
         blueSlider.minimumTrackTintColor = .blue
+        blueSlider.maximumTrackTintColor = .gray
         blueSlider.thumbTintColor = .blue
         
     }
+    private func setValueLabel(){
+        redLabel.text = stringFromSladerValue(redSlider)
+        greenLabel.text = stringFromSladerValue(greenSlider)
+        blueLabel.text = stringFromSladerValue(blueSlider)
+        
+    }
+    private func stringFromSladerValue(_ slider: UISlider) -> String {
+            String(format: "%.2f", slider.value)
+        }
 }
 
