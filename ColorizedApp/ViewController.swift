@@ -27,21 +27,17 @@ class ViewController: UIViewController {
         setValueLabel()
     }
     
-    @IBAction func redSliderAction() {
+    @IBAction func colorSlaiderAction(_ selectedSlider: UIAction){
         setsColorView()
-        redLabel.text = stringFromSladerValue(redSlider)
+        switch selectedSlider {
+            case redSlider:
+            redLabel.text = stringFromSladerValue(redSlider)
+            case greenSlider:
+            greenLabel.text = stringFromSladerValue(greenSlider)
+        default:
+            blueLabel.text = stringFromSladerValue(blueSlider)
+        }
     }
-    @IBAction func greenSliderAction() {
-        setsColorView()
-        greenLabel.text = stringFromSladerValue(greenSlider)
-    }
-    @IBAction func blueSliderActionn() {
-        setsColorView()
-        blueLabel.text = stringFromSladerValue(blueSlider)
-    }
-    
-    
-    
     
     private func setsColorView() {
         colorView.backgroundColor = UIColor (
