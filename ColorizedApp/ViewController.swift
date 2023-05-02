@@ -27,9 +27,19 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         colorView.layer.cornerRadius = 12
         setupSlider()
+        setsColorView()
     }
 
-   
+    
+    
+    private func setsColorView() {
+        colorView.backgroundColor = UIColor (
+            red: CGFloat(redSlider.value),
+            green: CGFloat(greenSlider.value),
+            blue: CGFloat(blueSlider.value),
+            alpha: 1
+        )
+    }
     
     
     
