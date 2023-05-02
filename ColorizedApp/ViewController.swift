@@ -9,7 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
-
+// MARK: IBOutlet
+    
     @IBOutlet var colorView: UIView!
     
     @IBOutlet var redLabel: UILabel!
@@ -27,6 +28,8 @@ class ViewController: UIViewController {
         setValueLabel()
     }
     
+// MARK: IBAction
+    
     @IBAction func colorSlaiderAction(_ selectedSlider: UIAction){
         setsColorView()
         switch selectedSlider {
@@ -39,6 +42,8 @@ class ViewController: UIViewController {
         }
     }
     
+// MARK: Private method
+    
     private func setsColorView() {
         colorView.backgroundColor = UIColor (
             red: CGFloat(redSlider.value),
@@ -47,8 +52,6 @@ class ViewController: UIViewController {
             alpha: 1
             )
     }
-    
-    
     
     private func setupSlider() {
         redSlider.minimumTrackTintColor = .red
@@ -60,8 +63,8 @@ class ViewController: UIViewController {
         blueSlider.minimumTrackTintColor = .blue
         blueSlider.maximumTrackTintColor = .gray
         blueSlider.thumbTintColor = .blue
-        
     }
+    
     private func setValueLabel(){
         redLabel.text = stringFromSladerValue(redSlider)
         greenLabel.text = stringFromSladerValue(greenSlider)
