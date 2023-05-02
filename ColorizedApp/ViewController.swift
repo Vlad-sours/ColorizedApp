@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        colorView.backgroundColor = .gray
         colorView.layer.cornerRadius = 12
         setupSlider()
         setValueLabel()
