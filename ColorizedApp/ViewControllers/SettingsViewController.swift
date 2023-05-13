@@ -8,9 +8,8 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-
-// MARK: IBOutlet
     
+    // MARK: IBOutlet
     @IBOutlet var colorView: UIView!
     
     @IBOutlet var redLabel: UILabel!
@@ -21,6 +20,11 @@ class SettingsViewController: UIViewController {
     @IBOutlet var greenSlider: UISlider!
     @IBOutlet var blueSlider: UISlider!
     
+    @IBOutlet var redTextField: UITextField!
+    @IBOutlet var greenTextField: UITextField!
+    @IBOutlet var blueTextField: UITextField!
+    
+    // MARK: override func
     override func viewDidLoad() {
         super.viewDidLoad()
         colorView.backgroundColor = .gray
@@ -29,29 +33,32 @@ class SettingsViewController: UIViewController {
         setValueLabel()
     }
     
-// MARK: IBAction
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
     
+    // MARK: IBAction
     @IBAction func colorSlaiderAction(_ selectedSlider: UIAction){
         setsColorView()
         switch selectedSlider {
-            case redSlider:
+        case redSlider:
             redLabel.text = stringFromSladerValue(redSlider)
-            case greenSlider:
+        case greenSlider:
             greenLabel.text = stringFromSladerValue(greenSlider)
         default:
             blueLabel.text = stringFromSladerValue(blueSlider)
         }
     }
     
-// MARK: Private method
-    
+    // MARK: Private method
     private func setsColorView() {
         colorView.backgroundColor = UIColor (
             red: CGFloat(redSlider.value),
             green: CGFloat(greenSlider.value),
             blue: CGFloat(blueSlider.value),
             alpha: 1
-            )
+        )
     }
     
     private func setupSlider() {
@@ -70,10 +77,18 @@ class SettingsViewController: UIViewController {
         redLabel.text = stringFromSladerValue(redSlider)
         greenLabel.text = stringFromSladerValue(greenSlider)
         blueLabel.text = stringFromSladerValue(blueSlider)
-        
     }
+    
     private func stringFromSladerValue(_ slider: UISlider) -> String {
-            String(format: "%.2f", slider.value)
-        }
+        String(format: "%.2f", slider.value)
+    }
+    
+    private func setColor() {
+        colorView.backgroundColor = UIColor(
+            red: CGFloat(redSlider.value),
+            green: CGFloat(greenSlider.value),
+            blue: CGFloat(blueSlider.value),
+            alpha: 1
+        )
+    }
 }
-
