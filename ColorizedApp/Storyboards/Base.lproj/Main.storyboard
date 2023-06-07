@@ -108,19 +108,19 @@
                                             <slider opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ps1-YH-IAC">
                                                 <rect key="frame" x="-2" y="0.0" width="141" height="33"/>
                                                 <connections>
-                                                    <action selector="colorSlaiderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="VB1-AQ-FCb"/>
+                                                    <action selector="rgbSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="eYL-IH-wxp"/>
                                                 </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="GUo-BE-UMC">
                                                 <rect key="frame" x="-2" y="47" width="141" height="31"/>
                                                 <connections>
-                                                    <action selector="colorSlaiderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="0HI-0x-GVt"/>
+                                                    <action selector="rgbSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="1QK-Ea-CXd"/>
                                                 </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ECa-tZ-iLH">
                                                 <rect key="frame" x="-2" y="92" width="141" height="31"/>
                                                 <connections>
-                                                    <action selector="colorSlaiderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="8eA-Jo-Jds"/>
+                                                    <action selector="rgbSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="Wvg-5f-Kyu"/>
                                                 </connections>
                                             </slider>
                                         </subviews>
@@ -206,7 +206,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UkK-8F-zLg" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ttM-Ek-KdK">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
